@@ -22,8 +22,12 @@ console.log(factorialize1(6));
 
 // Cách 2: dùng đệ quy
 const factorialize2 = (num) => {
-    if(!num || num < 0) return false
+    //Base
     if(num === 0) return 1
+    //Validate unit
+    if(!num || num < 1 || !Number.isInteger(num)) return false
+  
+    //Recursive Step
     return num * factorialize2(num-1)
-}
-console.log(factorialize2(6));
+  }
+  console.log(factorialize2(6));
