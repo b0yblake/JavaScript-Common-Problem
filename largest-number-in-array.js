@@ -35,13 +35,13 @@ const largestNum2 = (array) => {
 console.log(largestNum2(randomArray2)); //[5,27,39,1001]
 
 
-// Cách 2: dùng map method 
+// Cách 2: dùng map method
 // Dùng map để duyệt qua từng item của array tổng (bản chất của map() là duyệt qua từng item của array và trả lại 1 array mới sau khi thực hiện logic nào đó)
 // Dùng reduce để so sánh các item con của array child, lấy giá trị lớn nhất rồi trả về kết quả duy nhất,
 const randomArray3 = [[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]];
 const largestNum3 = (array) => {
   return array.map((item) => {
-    console.log(item)
+    //console.log(item)
     return item.reduce((acc, cur) => {
       return (cur > acc) ? cur : acc
     }, 0);
