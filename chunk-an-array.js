@@ -41,7 +41,8 @@ const chunkArrInGroup2 = (listItem, num) => {
 
 // Cách 3: sử dụng splice
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
-// splice(start,end, optional) -> splice 
+// splice(start, end, optional)
+// Không khuyến cáo sử dụng cách này, vì 1 số trường hợp shallow copy không copy được nest array (splice làm thay đổi array gốc)
 const chunkArrInGroup3 = (listItem, num) => {
     let tmpArr = [],
         cloneArr = [...listItem]; //shallow copy
@@ -53,9 +54,8 @@ const chunkArrInGroup3 = (listItem, num) => {
 //console.log(chunkArrInGroup3(arr, 2));
 
 // Cách 4: sử dụng recursion
-// 
 const chunkArrInGroup4 = (listItem, num) => {
-    if (listItem.length == 0) return []; 
+    if (listItem.length === 0) return []; 
     else return [listItem.slice(0, num)].concat(chunkArrInGroup4(listItem.slice(num), num)); 
 }
 console.log(chunkArrInGroup4(arr, 2));
