@@ -6,4 +6,9 @@
 
 const arr = [45,32,56,23];
 
-// Cách 1: sử dụng các method có sẵn 
+// Cách 1: sử dụng các method có sẵn shift() pop()
+const removeItem = function(arr) {
+    arr.shift();
+    return arr
+}
+console.log(removeItem(arr));
