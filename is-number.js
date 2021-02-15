@@ -19,3 +19,6 @@ const isNumber2 = (val => Number.isInteger(val))
 console.log(isNumber2(1)); // true
 console.log(isNumber2('1')); // false
 console.log(isNumber2(NaN)); // false
+
+// Cách 2. Sử dụng cách yếu tố cũ.
+const isNumber = (obj) => obj !== undefined && typeof(obj) === 'number' && !isNaN(obj);
