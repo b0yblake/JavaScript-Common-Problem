@@ -1,15 +1,16 @@
-//Check if item (number) in array has repeat, remove it and leave it only once.
+//Check if item (number) in array has repeat, remove it and leave it unique.
+//https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array
 
 /**
  * @param {array} array
- * @return {array}
+ * @return {array} //[1, 2, 3, 4, 5, 6]
  */
 
 const arrayDuplicated = [1, 2, 2, 3, 1, 2, 4, 5, 4, 2, 6];
 
 // Cách 1: new Set (best way for model js)
 const removedDuplicate = array => [...new Set(array)];
-console.log(removedDuplicate(arrayDuplicated)); //[1, 2, 3, 4, 5, 6]
+console.log(removedDuplicate(arrayDuplicated)); 
 
 // Cách 2: Sử dụng map / forEach / for
 const removedDuplicate2 = (array) => {
@@ -22,8 +23,9 @@ const removedDuplicate2 = (array) => {
 console.log(removedDuplicate2(arrayDuplicated));
 
 // Cách 3: Sử dụng filter
-const removedDuplicate3 = (array) => {
-  return array.filter((item, index, self) => {
+// self param là option (self ==== ar), có thể có hoặc dùng lại giá trị "ar"
+const removedDuplicate3 = (ar) => {
+  return ar.filter((item, index, self) => {
     return self.indexOf(item) === index;
   })
 }
