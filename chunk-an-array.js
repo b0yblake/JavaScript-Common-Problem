@@ -42,7 +42,7 @@ const chunkArrInGroup2 = (listItem, num) => {
 // Cách 3: sử dụng splice
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 // splice(start, end, optional)
-// Không khuyến cáo sử dụng cách này, vì 1 số trường hợp shallow copy không copy được nest array (splice làm thay đổi array gốc)
+// Không khuyến khich sử dụng cách này, vì 1 số trường hợp shallow copy không copy được nest array (splice làm thay đổi array gốc)
 const chunkArrInGroup3 = (listItem, num) => {
     let tmpArr = [],
         cloneArr = [...listItem]; //shallow copy
